@@ -1,0 +1,1 @@
+Restaurant Page Project from The Odin Project curriculum
