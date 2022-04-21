@@ -1,23 +1,49 @@
 body, div, h1 {
     margin: 0;
 }
-body {
-    background-image: url('images/mhw-canteen.jpg');
-    background-size: cover;
-}
 nav {
     background-color: black;
+    color: white;
     display: flex;
-    height: 14vh;
+    font-size: 1.50rem;
+    justify-content: space-between;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    font-size: 1.75rem;
+}
+.sub-header {
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
-nav .logo {
-    align-self: center;
-    color: white;
+.sub-header .logo {
     max-height: 90%;
 }
-nav h1 {
-    align-self: center;
-    color: white;
+.sub-header h1 {
     font-size: 80px;
+}
+a {
+    color: inherit;
+    margin: 1rem;
+    text-decoration: none;
+}
+#manifesto {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+img {
+    width: 55vw;
+}
+#statement {
+    max-width: 40vw;
+}
+footer {
+    font-size: 1.10rem;
+    padding: 30px;
+    text-align: center;
 }
