@@ -22,6 +22,7 @@ const hero = () => {
     }
     // Then create the link container
     let createSubheader = () => {
+        // store page names in an array
         let pages = ['Home', 'Menu', 'About Us'];
         let div = document.createElement('div');
         div.classList.add('sub-header');
@@ -62,6 +63,62 @@ const hero = () => {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (hero);
+
+/***/ }),
+/* 2 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const content = document.querySelector('#content');
+// List of items
+const items = [
+    {name: 'Koro-nets', desc: 'Chocolate cornets. Koro Cafe\'s signature item', img: 'images/item-imgs/cornet.jpeg'}
+]
+// start with child elements then create parent elements
+const menu = () => {
+    // Create elements for item name, description, and image
+    let createItemName = (name) => {
+        let p = document.createElement('p');
+        p.innerText = name;
+        p.classList.add('item-name');
+        return p;
+    }
+    let createItemDesc = (desc) => {
+        let p = document.createElement('p');
+        p.innerText = desc;
+        p.classList.add('item-desc');
+        return p;
+    }
+    let createItemImg = (src) => {
+        let img = document.createElement('img');
+        img.setAttribute('src', src);
+        img.classList.add('item-img');
+        return img;
+    }
+    // Individual menu items with name, description, and image
+    let createMenuItems = () => {
+        for (let i = 0; i < items.length; i++){
+            let div = document.createElement('div');
+            div.classList.add('item');
+            div.appendChild(createItemImg(items[i].img));
+            div.appendChild(createItemName(items[i].name));
+            div.appendChild(createItemDesc(items[i].desc));
+            return div;
+        }
+    }
+    let createItemCont = () => {
+        let div = document.createElement('div');
+        div.classList.add('item-container');
+        div.appendChild(createMenuItems());
+        content.appendChild(div);
+    }
+    createItemCont()
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menu);
 
 /***/ })
 /******/ 	]);
@@ -125,9 +182,11 @@ var __webpack_exports__ = {};
 (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hero_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 
 
-(0,_hero_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+
+(0,_menu_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
 })();
 
 /******/ })()

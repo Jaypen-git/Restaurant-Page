@@ -11,6 +11,7 @@ const hero = () => {
     }
     // Then create the link container
     let createSubheader = () => {
+        // store page names in an array
         let pages = ['Home', 'Menu', 'About Us'];
         let div = document.createElement('div');
         div.classList.add('sub-header');
