@@ -1,49 +1,57 @@
-body, div, h1 {
+body, html {
+    height: 100%;
+    margin: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+}
+#content {
+    height: 100%;
+    width: 100%;
+}
+.hero-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/hero-image.jpeg);
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+nav h1{
     margin: 0;
 }
 nav {
-    background-color: black;
-    color: white;
     display: flex;
+    align-items: center;
     font-size: 1.50rem;
     justify-content: space-between;
+    padding: 30px;
 }
-#container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: space-between;
-    font-size: 1.75rem;
-}
-.sub-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.sub-header .logo {
-    max-height: 90%;
-}
-.sub-header h1 {
-    font-size: 80px;
-}
-a {
-    color: inherit;
-    margin: 1rem;
+nav a {
+    color: white;
     text-decoration: none;
 }
-#manifesto {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+nav .links {
+    margin: 0 10px;
 }
-img {
-    width: 55vw;
+nav .links:hover {
+    color: yellow;
 }
-#statement {
-    max-width: 40vw;
+.hero-container button {
+    align-self: center;
+    border: none;
+    border-radius: 30px;
+    background-color: rgb(125, 74, 43);
+    color: white;
+    font-size: 1.50rem;
+    margin-bottom: 5rem;
+    padding: 15px 35px;
+    width: fit-content;
 }
-footer {
-    font-size: 1.10rem;
-    padding: 30px;
-    text-align: center;
+.hero-container button:hover {
+    background-color: white;
+    color: rgb(125, 74, 43);
 }

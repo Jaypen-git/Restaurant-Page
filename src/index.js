@@ -1,1 +1,3 @@
-console.log('initializing moisture...');
+import hero from './hero.js';
+
+hero();
