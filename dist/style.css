@@ -21,7 +21,6 @@ nav {
     align-items: center;
     font-size: 1.50rem;
     justify-content: space-between;
-    position: fixed;
     width: 100vw;
 }
 nav h1{

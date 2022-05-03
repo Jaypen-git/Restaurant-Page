@@ -1,4 +1,4 @@
-const header = document.querySelector('header');
+const content = document.querySelector('#content')
 
 const nav = () => {
         // Start with creating the links
@@ -34,7 +34,7 @@ const nav = () => {
             nav.appendChild(createSubheader());
             return nav;
         }
-        header.appendChild(createNav());
+        content.appendChild(createNav());
 }
 
 export default nav;
