@@ -9,7 +9,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-const header = document.querySelector('header');
+// const content = document.querySelector('#content')
 
 const nav = () => {
         // Start with creating the links
@@ -28,6 +28,7 @@ const nav = () => {
             div.classList.add('sub-header');
             for(let i = 0; i < pages.length; i++){
                 let a = createLink(pages[i]);
+                a.id = pages[i];
                 div.appendChild(a);
             }
             return div;
@@ -45,7 +46,7 @@ const nav = () => {
             nav.appendChild(createSubheader());
             return nav;
         }
-        header.appendChild(createNav());
+        document.body.appendChild(createNav());
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (nav);
@@ -64,7 +65,7 @@ const hero = () => {
     // The CTA (Call to Action) button is on the same level as the menu
     let createButton = () => {
         let button = document.createElement('button');
-        button.innerText = 'Order Now';
+        button.innerText = 'See our Menu!';
         return button;
     }
     // The hero container, which houses everything we need for the hero section
@@ -90,7 +91,8 @@ __webpack_require__.r(__webpack_exports__);
 const content = document.querySelector('#content');
 // List of items
 const items = [
-    {name: 'Koro-nets', desc: 'Chocolate cornets. Koro Cafe\'s signature item', img: 'images/item-imgs/cornet.jpeg'}
+    {name: 'Koro-nets', desc: 'Chocolate cornets. Koro Cafe\'s signature item', img: 'images/item-imgs/cornet.jpeg'},
+    {name: 'Bubble Tea', desc: 'Milk Tea with black tapioca pearls', img: 'images/item-imgs/bubble-tea.jpg'}
 ]
 // start with child elements then create parent elements
 const menu = () => {
@@ -114,20 +116,20 @@ const menu = () => {
         return img;
     }
     // Individual menu items with name, description, and image
-    let createMenuItems = () => {
+    let createMenuItems = (element) => {
         for (let i = 0; i < items.length; i++){
             let div = document.createElement('div');
             div.classList.add('item');
             div.appendChild(createItemImg(items[i].img));
             div.appendChild(createItemName(items[i].name));
             div.appendChild(createItemDesc(items[i].desc));
-            return div;
+            element.appendChild(div);
         }
     }
     let createItemCont = () => {
         let div = document.createElement('div');
         div.classList.add('item-container');
-        div.appendChild(createMenuItems());
+        createMenuItems(div);
         content.appendChild(div);
     }
     createItemCont()
@@ -204,7 +206,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (0,_nav_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
-(0,_hero_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
+(0,_menu_js__WEBPACK_IMPORTED_MODULE_2__["default"])();
 })();
 
 /******/ })()

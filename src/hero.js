@@ -4,7 +4,7 @@ const hero = () => {
     // The CTA (Call to Action) button is on the same level as the menu
     let createButton = () => {
         let button = document.createElement('button');
-        button.innerText = 'Order Now';
+        button.innerText = 'See our Menu!';
         return button;
     }
     // The hero container, which houses everything we need for the hero section

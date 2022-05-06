@@ -3,17 +3,20 @@ body, html {
     margin: 0;
 }
 body {
+    background-attachment: fixed;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/hero-image.jpeg);
+    background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
 #content {
     height: 100%;
-    width: 100%;
+    order: 2;
 }
 .hero-container {
     color: white;
     display: flex;
-    height: 100%;
     width: 100%;
 }
 nav {
@@ -21,6 +24,7 @@ nav {
     align-items: center;
     font-size: 1.50rem;
     justify-content: space-between;
+    order: 1;
     width: 100vw;
 }
 nav h1{
@@ -48,7 +52,7 @@ nav .links:hover {
     font-size: 1.50rem;
     margin: 0 auto 5rem auto;
     padding: 15px 35px;
-    width: fit-content;
+    /* width: fit-content; */
 }
 .hero-container button:hover {
     background-color: white;
@@ -56,13 +60,19 @@ nav .links:hover {
 }
 .item-container {
     display: grid;
-    grid-template: 350px 350px / repeat(3, 250px);
+    gap: 30px;
+    grid-template: 350px / repeat(3, 250px);
+    margin: 0 auto;
     width: fit-content;
 }
 .item {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-size: 18px;
+    padding: 10px 5px;
     text-align: center;
 }
 .item-img {

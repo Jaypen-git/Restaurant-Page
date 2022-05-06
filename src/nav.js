@@ -1,4 +1,4 @@
-const content = document.querySelector('#content')
+// const content = document.querySelector('#content')
 
 const nav = () => {
         // Start with creating the links
@@ -17,6 +17,7 @@ const nav = () => {
             div.classList.add('sub-header');
             for(let i = 0; i < pages.length; i++){
                 let a = createLink(pages[i]);
+                a.id = pages[i];
                 div.appendChild(a);
             }
             return div;
@@ -34,7 +35,7 @@ const nav = () => {
             nav.appendChild(createSubheader());
             return nav;
         }
-        content.appendChild(createNav());
+        document.body.appendChild(createNav());
 }
 
 export default nav;

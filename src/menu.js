@@ -1,7 +1,8 @@
 const content = document.querySelector('#content');
 // List of items
 const items = [
-    {name: 'Koro-nets', desc: 'Chocolate cornets. Koro Cafe\'s signature item', img: 'images/item-imgs/cornet.jpeg'}
+    {name: 'Koro-nets', desc: 'Chocolate cornets. Koro Cafe\'s signature item', img: 'images/item-imgs/cornet.jpeg'},
+    {name: 'Bubble Tea', desc: 'Milk Tea with black tapioca pearls', img: 'images/item-imgs/bubble-tea.jpg'}
 ]
 // start with child elements then create parent elements
 const menu = () => {
@@ -25,20 +26,20 @@ const menu = () => {
         return img;
     }
     // Individual menu items with name, description, and image
-    let createMenuItems = () => {
+    let createMenuItems = (element) => {
         for (let i = 0; i < items.length; i++){
             let div = document.createElement('div');
             div.classList.add('item');
             div.appendChild(createItemImg(items[i].img));
             div.appendChild(createItemName(items[i].name));
             div.appendChild(createItemDesc(items[i].desc));
-            return div;
+            element.appendChild(div);
         }
     }
     let createItemCont = () => {
         let div = document.createElement('div');
         div.classList.add('item-container');
-        div.appendChild(createMenuItems());
+        createMenuItems(div);
         content.appendChild(div);
     }
     createItemCont()
