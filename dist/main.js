@@ -9,7 +9,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-// const content = document.querySelector('#content')
+/* harmony import */ var _deleteContent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _hero__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+
+
+
 
 const nav = () => {
         // Start with creating the links
@@ -23,12 +28,31 @@ const nav = () => {
         // Then create the link container
         let createSubheader = () => {
             // store page names in an array
-            let pages = ['Home', 'Menu', 'About Us'];
+            let pages = [
+                {
+                    name: 'Home',
+                    // write a function to call other functions
+                    page: function(){
+                        // clear the content div first
+                        ;(0,_deleteContent__WEBPACK_IMPORTED_MODULE_0__["default"])();
+                        // then fill the div with the desired content
+                        (0,_hero__WEBPACK_IMPORTED_MODULE_1__["default"])();
+                    }
+                },
+                {
+                    name: 'Menu',
+                    page: function(){
+                        (0,_deleteContent__WEBPACK_IMPORTED_MODULE_0__["default"])();
+                        (0,_menu__WEBPACK_IMPORTED_MODULE_2__["default"])();
+                    }
+                },
+            ];
             let div = document.createElement('div');
             div.classList.add('sub-header');
             for(let i = 0; i < pages.length; i++){
-                let a = createLink(pages[i]);
-                a.id = pages[i];
+                let a = createLink(pages[i].name);
+                a.id = pages[i].name;
+                a.addEventListener('click', pages[i].page);
                 div.appendChild(a);
             }
             return div;
@@ -136,6 +160,21 @@ const menu = () => {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menu);
+
+/***/ }),
+/* 4 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+let content = document.querySelector('#content');
+const deleteContent = () => {
+    content.innerHTML = '';
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (deleteContent);
 
 /***/ })
 /******/ 	]);
